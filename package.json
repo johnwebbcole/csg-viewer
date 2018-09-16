@@ -1,11 +1,16 @@
 {
-  "name": "@jscad/csg-viewer",
-  "version": "0.0.0",
+  "name": "@jwc/csg-viewer",
+  "version": "1.0.0",
   "description": "",
   "main": "src/index.js",
+  "module": "src/index.js",
+  "files": [
+    "src"
+  ],
   "scripts": {
     "test": "tape test.js",
-    "dev": "budo example/demo.js --title csg-viewer --live --css example/demo.css -- -t glslify -t brfs",
+    "dev": "budo example/demo.js --title csg-viewer --live --css example/demo.css -- -t glslify",
+    "dev2": "budo example/demo.js --title csg-viewer --live --css example/demo.css -- -t glslify -t brfs",
     "build": "browserify -p common-shakeify --standalone makeCsgViewer src/index.js > dist/bundle.js",
     "minify": "uglifyjs dist/bundle.js --compress > dist/bundle.min.js",
     "compress": "gzipme dist/bundle.min.js",
@@ -14,10 +19,10 @@
   "author": "Mark 'kaosat-dev' Moissette",
   "license": "MIT",
   "devDependencies": {
-    "@jscad/scad-api": "^0.4.2",
-    "browserify": "^14.5.0",
-    "budo": "^10.0.4",
-    "common-shakeify": "^0.4.5",
+    "@jscad/scad-api": "^0.5.1",
+    "browserify": "^16.2.2",
+    "budo": "^11.3.2",
+    "common-shakeify": "^0.5.1",
     "gzipme": "^0.1.1",
     "uglify-es": "^3.2.1"
   },
